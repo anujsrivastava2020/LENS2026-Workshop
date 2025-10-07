@@ -7,7 +7,6 @@
   <meta name="description" content="LENS 2026 workshop at WACV: geometry of latent representations, manifolds, Riemannian structure, intrinsic dimension, geometry-aware AI."/>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Optional: softened card shadow & animated gradient */
     .soft-shadow{ box-shadow: 0 10px 30px -12px rgba(2,6,23,.25); }
     .glass{ backdrop-filter: blur(8px); background: rgba(255,255,255,0.6); }
   </style>
@@ -36,8 +35,9 @@
     <div class="h-64 md:h-80 bg-cover bg-center"
          style="background-image:url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1600&auto=format&fit=crop');">
     </div>
-    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-[92%] md:w-[80%]">
+    <!-- Make overlay non-interactive so it doesn't block clicks -->
+    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-[92%] md:w-[80%] z-10">
       <div class="glass soft-shadow rounded-3xl px-6 py-5">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
           <div class="text-slate-800">
@@ -50,9 +50,9 @@
             <p class="mt-1 text-slate-700">A full-day workshop on geometric foundations of learned representations and their impact on vision & AI.</p>
           </div>
           <div class="flex flex-wrap gap-2">
-            <button onclick="openDialog('speakers')" class="px-4 py-2 rounded-xl text-white bg-indigo-600 hover:bg-indigo-700 soft-shadow">🎤 Invited Speakers</button>
-            <button onclick="openDialog('committee')" class="px-4 py-2 rounded-xl text-white bg-fuchsia-600 hover:bg-fuchsia-700 soft-shadow">👥 Committee</button>
-            <button onclick="openDialog('submissions')" class="px-4 py-2 rounded-xl text-indigo-700 bg-white border hover:bg-indigo-50 soft-shadow">📄 Submissions</button>
+            <button type="button" onclick="openDialog('speakers')" class="px-4 py-2 rounded-xl text-white bg-indigo-600 hover:bg-indigo-700 soft-shadow">🎤 Invited Speakers</button>
+            <button type="button" onclick="openDialog('committee')" class="px-4 py-2 rounded-xl text-white bg-fuchsia-600 hover:bg-fuchsia-700 soft-shadow">👥 Committee</button>
+            <button type="button" onclick="openDialog('submissions')" class="px-4 py-2 rounded-xl text-indigo-700 bg-white border hover:bg-indigo-50 soft-shadow">📄 Submissions</button>
           </div>
         </div>
       </div>
@@ -88,7 +88,7 @@
     </div>
   </section>
 
-  <!-- Motivation (inserted per your request) -->
+  <!-- Motivation -->
   <section id="motivation" class="mx-auto max-w-7xl px-4 pt-12">
     <div class="bg-white rounded-3xl p-6 soft-shadow border border-indigo-100">
       <h2 class="text-2xl md:text-3xl font-bold">Motivation</h2>
@@ -102,7 +102,6 @@
   <section id="topics" class="mx-auto max-w-7xl px-4 pt-12">
     <h2 class="text-2xl md:text-3xl font-bold">Topics of Interest</h2>
     <div class="mt-6 grid md:grid-cols-2 gap-4">
-      <!-- Colorful topic cards -->
       <div class="rounded-2xl p-4 bg-gradient-to-r from-indigo-100 to-indigo-50 border border-indigo-200">Learning latent representations and their Riemannian geometry</div>
       <div class="rounded-2xl p-4 bg-gradient-to-r from-fuchsia-100 to-pink-50 border border-fuchsia-200">Manifold learning with deep neural networks</div>
       <div class="rounded-2xl p-4 bg-gradient-to-r from-emerald-100 to-teal-50 border border-emerald-200">Manifold hypothesis for image & multimodal data</div>
@@ -144,9 +143,9 @@
     </div>
   </footer>
 
-  <!-- Dialogs -->
-  <div id="speakers" class="hidden fixed inset-0 bg-black/40 flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl p-6 w-full max-w-xl soft-shadow">
+  <!-- Dialogs (z-50 so they're above everything) -->
+  <div id="speakers" class="hidden fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4" onclick="backdropClose(event,'speakers')">
+    <div class="bg-white rounded-3xl p-6 w-full max-w-xl soft-shadow" onclick="event.stopPropagation()">
       <h3 class="text-2xl font-bold mb-3">Invited Speakers (TBA)</h3>
       <ul class="list-disc pl-6 space-y-1 text-slate-800">
         <li>Speaker 1 — Institution</li>
@@ -155,13 +154,13 @@
         <li>Speaker 4 — Institution</li>
       </ul>
       <div class="mt-4 text-right">
-        <button onclick="closeDialog('speakers')" class="px-4 py-2 rounded-xl bg-indigo-600 text-white hover:bg-indigo-700">Close</button>
+        <button type="button" onclick="closeDialog('speakers')" class="px-4 py-2 rounded-xl bg-indigo-600 text-white hover:bg-indigo-700">Close</button>
       </div>
     </div>
   </div>
 
-  <div id="committee" class="hidden fixed inset-0 bg-black/40 flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl p-6 w-full max-w-xl soft-shadow">
+  <div id="committee" class="hidden fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4" onclick="backdropClose(event,'committee')">
+    <div class="bg-white rounded-3xl p-6 w-full max-w-xl soft-shadow" onclick="event.stopPropagation()">
       <h3 class="text-2xl font-bold mb-3">Organizing Committee</h3>
       <ul class="list-disc pl-6 space-y-1 text-slate-800">
         <li>Anuj Srivastava (Florida State University)</li>
@@ -170,13 +169,13 @@
         <li>Laurent Younes (Johns Hopkins University)</li>
       </ul>
       <div class="mt-4 text-right">
-        <button onclick="closeDialog('committee')" class="px-4 py-2 rounded-xl bg-fuchsia-600 text-white hover:bg-fuchsia-700">Close</button>
+        <button type="button" onclick="closeDialog('committee')" class="px-4 py-2 rounded-xl bg-fuchsia-600 text-white hover:bg-fuchsia-700">Close</button>
       </div>
     </div>
   </div>
 
-  <div id="submissions" class="hidden fixed inset-0 bg-black/40 flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl p-6 w-full max-w-2xl soft-shadow">
+  <div id="submissions" class="hidden fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4" onclick="backdropClose(event,'submissions')">
+    <div class="bg-white rounded-3xl p-6 w-full max-w-2xl soft-shadow" onclick="event.stopPropagation()">
       <h3 class="text-2xl font-bold mb-3">Instructions for Contributed Papers</h3>
       <ul class="list-disc pl-6 space-y-2 text-slate-700">
         <li><strong>Format:</strong> Follow the official WACV 2026 workshop template (same as main conference formatting unless specified). Typical length: 4–6 pages excluding references.</li>
@@ -186,10 +185,24 @@
         <li><strong>Presentation:</strong> Posters for all accepted papers; some may be invited for spotlight talks.</li>
       </ul>
       <div class="mt-4 text-right">
-        <button onclick="closeDialog('submissions')" class="px-4 py-2 rounded-xl bg-rose-600 text-white hover:bg-rose-700">Close</button>
+        <button type="button" onclick="closeDialog('submissions')" class="px-4 py-2 rounded-xl bg-rose-600 text-white hover:bg-rose-700">Close</button>
       </div>
     </div>
   </div>
 
   <script>
-    function openDialog(id){ document.getElementById(id).class
+    function openDialog(id){ document.getElementById(id).classList.remove('hidden'); document.body.style.overflow='hidden'; }
+    function closeDialog(id){ document.getElementById(id).classList.add('hidden'); document.body.style.overflow=''; }
+    function backdropClose(e,id){ if(e.target.id===id){ closeDialog(id); } }
+    // ESC to close
+    document.addEventListener('keydown', (e)=> {
+      if(e.key === 'Escape'){
+        ['speakers','committee','submissions'].forEach(id=>{
+          const el=document.getElementById(id);
+          if(el && !el.classList.contains('hidden')) closeDialog(id);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
