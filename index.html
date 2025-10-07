@@ -23,4 +23,173 @@
       </div>
       <nav class="hidden md:flex items-center gap-6 text-white/90 text-sm">
         <a href="#about" class="hover:text-white">About</a>
-        <a href="#motivation" class
+        <a href="#motivation" class="hover:text-white">Motivation</a>
+        <a href="#topics" class="hover:text-white">Topics</a>
+        <a href="#dates" class="hover:text-white">Dates</a>
+        <a href="#contact" class="hover:text-white">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner (replace the URL below with your banner image) -->
+  <section class="relative">
+    <div class="h-64 md:h-80 bg-cover bg-center"
+         style="background-image:url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1600&auto=format&fit=crop');">
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-[92%] md:w-[80%]">
+      <div class="glass soft-shadow rounded-3xl px-6 py-5">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+          <div class="text-slate-800">
+            <div class="inline-block bg-amber-200/70 text-amber-900 text-xs font-semibold px-2 py-1 rounded">
+              WACV 2026 · Tucson, Arizona · March 6–10 (workshop day TBA)
+            </div>
+            <h1 class="mt-2 text-2xl md:text-3xl font-extrabold leading-tight">
+              LENS: Learning & Exploitation of Latent Space Geometries
+            </h1>
+            <p class="mt-1 text-slate-700">A full-day workshop on geometric foundations of learned representations and their impact on vision & AI.</p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button onclick="openDialog('speakers')" class="px-4 py-2 rounded-xl text-white bg-indigo-600 hover:bg-indigo-700 soft-shadow">🎤 Invited Speakers</button>
+            <button onclick="openDialog('committee')" class="px-4 py-2 rounded-xl text-white bg-fuchsia-600 hover:bg-fuchsia-700 soft-shadow">👥 Committee</button>
+            <button onclick="openDialog('submissions')" class="px-4 py-2 rounded-xl text-indigo-700 bg-white border hover:bg-indigo-50 soft-shadow">📄 Submissions</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="mx-auto max-w-7xl px-4 pt-20 md:pt-24">
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white rounded-3xl p-6 soft-shadow">
+        <h2 class="text-2xl md:text-3xl font-bold">About LENS</h2>
+        <p class="mt-3 text-slate-700">
+          LENS brings together researchers studying the <strong>geometry of latent representations</strong>—their manifolds,
+          Riemannian structures, intrinsic dimensions, and implications for model design and evaluation. We aim to bridge
+          advances in <em>geometric learning</em> with practical <em>computer vision</em> applications, fostering dialogue
+          between theory and deployments.
+        </p>
+        <p class="mt-3 text-slate-700">
+          We welcome contributions that deepen our understanding of latent spaces (e.g., curvature, geodesics, topology),
+          propose geometry-aware architectures and objectives, or demonstrate how latent geometry can improve robustness,
+          generalization, fairness, privacy, and efficiency in real-world vision systems.
+        </p>
+      </div>
+      <div class="bg-gradient-to-br from-emerald-100 via-teal-50 to-sky-100 rounded-3xl p-6 soft-shadow">
+        <h3 class="text-xl font-semibold">Quick Facts</h3>
+        <ul class="mt-3 space-y-2 text-slate-700">
+          <li>📅 <strong>Dates:</strong> March 6–10, 2026 (exact workshop day TBA)</li>
+          <li>📍 <strong>Location:</strong> Tucson, Arizona, USA (with WACV 2026)</li>
+          <li>📝 <strong>Proceedings:</strong> WACV Workshops (subject to WACV policy)</li>
+          <li>🧭 <strong>Format:</strong> Invited talks + contributed posters (spotlights TBA)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Motivation (inserted per your request) -->
+  <section id="motivation" class="mx-auto max-w-7xl px-4 pt-12">
+    <div class="bg-white rounded-3xl p-6 soft-shadow border border-indigo-100">
+      <h2 class="text-2xl md:text-3xl font-bold">Motivation</h2>
+      <p class="mt-3 text-slate-700">
+        Recent breakthroughs in machine learning and artificial intelligence—spanning images, video, text, and other complex data—can be traced to the hidden structure of real-world data spaces. Although an image is formally a point in the immense space of all pixel arrays, the subset of natural scenes occupies a relatively low-dimensional, smooth manifold. This manifold hypothesis has far-reaching implications: if we can model and exploit the geometry of such manifolds, we can achieve more efficient, robust, and interpretable learning and inference. Early manifold learning methods (Isomap, LLE, MDS) in the 1990s–2000s pioneered this view but were limited in scalability and expressiveness. Today, large datasets, powerful computation, and deep generative models—variational autoencoders (VAEs), generative adversarial networks (GANs), diffusion and flow-based models—offer a new opportunity: to learn manifolds directly in latent spaces where data are compactly represented. These advances invite a fresh synthesis of geometry, topology, and modern AI, enabling principled exploration of latent representations, their Riemannian structure, and their role in next-generation learning algorithms.
+      </p>
+    </div>
+  </section>
+
+  <!-- Topics -->
+  <section id="topics" class="mx-auto max-w-7xl px-4 pt-12">
+    <h2 class="text-2xl md:text-3xl font-bold">Topics of Interest</h2>
+    <div class="mt-6 grid md:grid-cols-2 gap-4">
+      <!-- Colorful topic cards -->
+      <div class="rounded-2xl p-4 bg-gradient-to-r from-indigo-100 to-indigo-50 border border-indigo-200">Learning latent representations and their Riemannian geometry</div>
+      <div class="rounded-2xl p-4 bg-gradient-to-r from-fuchsia-100 to-pink-50 border border-fuchsia-200">Manifold learning with deep neural networks</div>
+      <div class="rounded-2xl p-4 bg-gradient-to-r from-emerald-100 to-teal-50 border border-emerald-200">Manifold hypothesis for image & multimodal data</div>
+      <div class="rounded-2xl p-4 bg-gradient-to-r from-rose-100 to-orange-50 border border-rose-200">Geometry-aware architectures and objectives</div>
+      <div class="rounded-2xl p-4 bg-gradient-to-r from-sky-100 to-cyan-50 border border-sky-200">Intrinsic dimension, dimension reduction, encoding</div>
+      <div class="rounded-2xl p-4 bg-gradient-to-r from-violet-100 to-purple-50 border border-violet-200">Latent geometry for robustness, OOD, fairness, privacy</div>
+      <div class="rounded-2xl p-4 bg-gradient-to-r from-lime-100 to-emerald-50 border border-lime-200">Geometric evaluation metrics & interpretability</div>
+      <div class="rounded-2xl p-4 bg-gradient-to-r from-amber-100 to-yellow-50 border border-amber-200">Applications to vision: recognition, segmentation, generative models</div>
+    </div>
+  </section>
+
+  <!-- Important Dates -->
+  <section id="dates" class="mx-auto max-w-7xl px-4 pt-12">
+    <div class="bg-white rounded-3xl p-6 soft-shadow">
+      <h2 class="text-2xl md:text-3xl font-bold">Important Dates (Tentative)</h2>
+      <div class="mt-4 grid md:grid-cols-2 gap-4 text-slate-800">
+        <div class="rounded-2xl p-4 bg-indigo-50 border border-indigo-200">Paper submission deadline: <strong>TBA (Nov/Dec 2025)</strong></div>
+        <div class="rounded-2xl p-4 bg-fuchsia-50 border border-fuchsia-200">Notification to authors: <strong>TBA (Jan 2026)</strong></div>
+        <div class="rounded-2xl p-4 bg-emerald-50 border border-emerald-200">Camera-ready due: <strong>TBA (Late Jan 2026)</strong></div>
+        <div class="rounded-2xl p-4 bg-rose-50 border border-rose-200">Workshop day at WACV: <strong>One day during Mar 6–10, 2026</strong></div>
+      </div>
+      <p class="mt-2 text-sm text-slate-500">Exact dates will be finalized after coordination with WACV organizers (all deadlines 23:59 AoE unless noted).</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="mt-16">
+    <div class="bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-rose-500 text-white">
+      <div class="mx-auto max-w-7xl px-4 py-10 flex flex-col md:flex-row justify-between gap-6">
+        <div>
+          <h3 class="font-semibold">Contact</h3>
+          <p class="text-white/90 text-sm">
+            For inquiries, please email:
+            <a class="underline" href="mailto:lens2026.workshop@gmail.com">lens2026.workshop@gmail.com</a>
+          </p>
+        </div>
+        <div class="text-sm text-white/80">© 2026 LENS Workshop @ WACV</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dialogs -->
+  <div id="speakers" class="hidden fixed inset-0 bg-black/40 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-6 w-full max-w-xl soft-shadow">
+      <h3 class="text-2xl font-bold mb-3">Invited Speakers (TBA)</h3>
+      <ul class="list-disc pl-6 space-y-1 text-slate-800">
+        <li>Speaker 1 — Institution</li>
+        <li>Speaker 2 — Institution</li>
+        <li>Speaker 3 — Institution</li>
+        <li>Speaker 4 — Institution</li>
+      </ul>
+      <div class="mt-4 text-right">
+        <button onclick="closeDialog('speakers')" class="px-4 py-2 rounded-xl bg-indigo-600 text-white hover:bg-indigo-700">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="committee" class="hidden fixed inset-0 bg-black/40 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-6 w-full max-w-xl soft-shadow">
+      <h3 class="text-2xl font-bold mb-3">Organizing Committee</h3>
+      <ul class="list-disc pl-6 space-y-1 text-slate-800">
+        <li>Anuj Srivastava (Florida State University)</li>
+        <li>Sudeep Sarkar (University of South Florida)</li>
+        <li>Pavan Turaga (Arizona State University)</li>
+        <li>Laurent Younes (Johns Hopkins University)</li>
+      </ul>
+      <div class="mt-4 text-right">
+        <button onclick="closeDialog('committee')" class="px-4 py-2 rounded-xl bg-fuchsia-600 text-white hover:bg-fuchsia-700">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="submissions" class="hidden fixed inset-0 bg-black/40 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-6 w-full max-w-2xl soft-shadow">
+      <h3 class="text-2xl font-bold mb-3">Instructions for Contributed Papers</h3>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700">
+        <li><strong>Format:</strong> Follow the official WACV 2026 workshop template (same as main conference formatting unless specified). Typical length: 4–6 pages excluding references.</li>
+        <li><strong>Submission site:</strong> CMT or OpenReview link (TBA). Do not include author names for double-blind review unless otherwise stated.</li>
+        <li><strong>Topics:</strong> Any theme listed under “Topics of Interest”.</li>
+        <li><strong>Deadlines:</strong> See “Important Dates” section (23:59 AoE unless noted).</li>
+        <li><strong>Presentation:</strong> Posters for all accepted papers; some may be invited for spotlight talks.</li>
+      </ul>
+      <div class="mt-4 text-right">
+        <button onclick="closeDialog('submissions')" class="px-4 py-2 rounded-xl bg-rose-600 text-white hover:bg-rose-700">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openDialog(id){ document.getElementById(id).class
