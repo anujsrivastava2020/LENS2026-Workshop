@@ -1,10 +1,168 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Welcome to My Site</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LENS 2026 — Learning and Exploitation of Latent Space Geometries</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Hello, world!</h1>
-    <p>This is my GitHub Pages website.</p>
+<body class="min-h-screen bg-gradient-to-b from-slate-50 to-white text-slate-800">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-30 backdrop-blur bg-white/70 border-b">
+    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2 font-semibold">
+        ✨ LENS 2026
+      </div>
+      <nav class="hidden md:flex items-center gap-4 text-slate-700">
+        <a href="#about" class="hover:text-slate-900">About</a>
+        <a href="#topics" class="hover:text-slate-900">Topics</a>
+        <a href="#dates" class="hover:text-slate-900">Dates</a>
+        <a href="#contact" class="hover:text-slate-900">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="mx-auto max-w-6xl px-4 py-16 grid md:grid-cols-2 gap-8 items-center">
+    <div>
+      <span class="bg-slate-200 text-slate-700 px-2 py-1 rounded text-sm">In conjunction with WACV 2026</span>
+      <h1 class="mt-3 text-4xl font-extrabold leading-tight">
+        LENS: Learning and Exploitation of Latent Space Geometries
+      </h1>
+      <p class="mt-4 text-lg text-slate-600">
+        A full-day workshop exploring geometric foundations of learned representations and their impact on computer vision, machine learning, and AI systems.
+      </p>
+      <div class="mt-6 space-y-1 text-slate-700">
+        <div>📅 March 6–10, 2026 <span class="text-slate-400">(exact day TBA)</span></div>
+        <div>📍 Tucson, Arizona, USA</div>
+      </div>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <button onclick="openDialog('speakers')" class="bg-slate-800 text-white px-4 py-2 rounded-lg">🎤 Invited Speakers</button>
+        <button onclick="openDialog('committee')" class="bg-slate-100 text-slate-800 px-4 py-2 rounded-lg border">👥 Organizing Committee</button>
+        <button onclick="openDialog('submissions')" class="bg-white border px-4 py-2 rounded-lg">📄 Submission Instructions</button>
+      </div>
+    </div>
+
+    <div class="border rounded-3xl shadow-lg p-6 bg-white">
+      <h2 class="text-2xl font-bold mb-3">About LENS</h2>
+      <p>
+        LENS brings together researchers studying the <strong>geometry of latent representations</strong>—their manifolds, Riemannian structures, intrinsic dimensions, and implications for model design and evaluation. The workshop aims to bridge advances in <em>geometric learning</em> with practical <em>computer vision</em> applications, fostering dialogue between theory and deployments.
+      </p>
+      <p class="mt-3">
+        We welcome contributions that deepen our understanding of latent spaces (e.g., curvature, geodesics, topology), propose geometry-aware architectures and objectives, or demonstrate how latent geometry can improve robustness, generalization, fairness, privacy, and efficiency in real-world vision systems.
+      </p>
+    </div>
+  </section>
+
+  <!-- Topics -->
+  <section id="topics" class="mx-auto max-w-6xl px-4 py-12">
+    <h2 class="text-3xl font-bold">Topics of Interest</h2>
+    <div class="mt-6 grid md:grid-cols-2 gap-4">
+      <ul class="list-disc pl-6 space-y-2 text-slate-700">
+        <li>Learning latent representations and their Riemannian geometry</li>
+        <li>Manifold learning with deep neural networks</li>
+        <li>Manifold hypothesis for image and multimodal data</li>
+        <li>Geometry-aware architectures and objectives</li>
+        <li>Intrinsic dimension, dimension reduction, and encoding</li>
+        <li>Latent geometry for robustness, OOD, fairness, and privacy</li>
+        <li>Geometric evaluation metrics, diagnostics, interpretability</li>
+        <li>Applications to vision: recognition, segmentation, generative models</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Important Dates -->
+  <section id="dates" class="mx-auto max-w-6xl px-4 py-12">
+    <h2 class="text-3xl font-bold">Important Dates (Tentative)</h2>
+    <ul class="mt-6 list-disc pl-6 space-y-2 text-slate-700">
+      <li>Paper submission deadline: <strong>TBA (Nov/Dec 2025)</strong></li>
+      <li>Notification to authors: <strong>TBA (Jan 2026)</strong></li>
+      <li>Camera-ready due: <strong>TBA (Late Jan 2026)</strong></li>
+      <li>Workshop day at WACV: <strong>One day during Mar 6–10, 2026</strong></li>
+    </ul>
+    <p class="mt-2 text-sm text-slate-500">Exact dates will be finalized after coordination with WACV organizers.</p>
+  </section>
+
+  <!-- Venue / Logistics -->
+  <section id="about" class="mx-auto max-w-6xl px-4 py-12">
+    <h2 class="text-3xl font-bold">Venue & Logistics</h2>
+    <div class="mt-4 grid md:grid-cols-2 gap-6 text-slate-700">
+      <div class="border rounded-2xl p-4">
+        <h3 class="font-semibold text-lg mb-2">Venue</h3>
+        <p>WACV 2026 · Tucson, Arizona, USA</p>
+        <p class="text-sm text-slate-500 mt-1">Exact room and date will be announced when the schedule is finalized.</p>
+      </div>
+      <div class="border rounded-2xl p-4">
+        <h3 class="font-semibold text-lg mb-2">Proceedings</h3>
+        <p>Accepted papers will appear in the official WACV Workshops proceedings (subject to WACV policy).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="border-t py-10 mt-8">
+    <div class="mx-auto max-w-6xl px-4 flex flex-col md:flex-row justify-between gap-4">
+      <div>
+        <h3 class="font-semibold">Contact</h3>
+        <p class="text-sm text-slate-600">
+          For inquiries, please email: 
+          <a href="mailto:lens2026.workshop@gmail.com" class="underline">lens2026.workshop@gmail.com</a>
+        </p>
+      </div>
+      <div class="text-sm text-slate-500">© 2026 LENS Workshop @ WACV</div>
+    </div>
+  </footer>
+
+  <!-- Dialogs -->
+  <div id="speakers" class="hidden fixed inset-0 bg-black/40 flex items-center justify-center">
+    <div class="bg-white rounded-2xl p-6 max-w-lg">
+      <h3 class="text-2xl font-bold mb-3">Invited Speakers (TBA)</h3>
+      <ul class="list-disc pl-6 space-y-1">
+        <li>Speaker 1 — Institution</li>
+        <li>Speaker 2 — Institution</li>
+        <li>Speaker 3 — Institution</li>
+      </ul>
+      <button onclick="closeDialog('speakers')" class="mt-4 bg-slate-800 text-white px-3 py-1 rounded-lg">Close</button>
+    </div>
+  </div>
+
+  <div id="committee" class="hidden fixed inset-0 bg-black/40 flex items-center justify-center">
+    <div class="bg-white rounded-2xl p-6 max-w-lg overflow-y-auto max-h-[90vh]">
+      <h3 class="text-2xl font-bold mb-3">Organizing Committee</h3>
+      <ul class="list-disc pl-6 space-y-1">
+        <li>Anuj Srivastava (Florida State University)</li>
+        <li>Sudeep Sarkar (University of South Florida)</li>
+        <li>Pavan Turaga (Arizona State University)</li>
+        <li>Laurent Younes (Johns Hopkins University)</li>
+      </ul>
+      <button onclick="closeDialog('committee')" class="mt-4 bg-slate-800 text-white px-3 py-1 rounded-lg">Close</button>
+    </div>
+  </div>
+
+  <div id="submissions" class="hidden fixed inset-0 bg-black/40 flex items-center justify-center">
+    <div class="bg-white rounded-2xl p-6 max-w-2xl overflow-y-auto max-h-[90vh]">
+      <h3 class="text-2xl font-bold mb-3">Instructions for Contributed Papers</h3>
+      <ul class="list-disc pl-6 space-y-1 text-slate-700">
+        <li><strong>Format:</strong> Follow the official WACV 2026 workshop template (same as main conference formatting unless specified). Typical length: 4–6 pages excluding references.</li>
+        <li><strong>Submission site:</strong> CMT or OpenReview link (TBA). Do not include author names for double-blind review unless otherwise stated.</li>
+        <li><strong>Topics:</strong> Any theme listed under “Topics of Interest”.</li>
+        <li><strong>Deadlines:</strong> See “Important Dates” section. All deadlines are 23:59 AoE unless noted.</li>
+        <li><strong>Presentation:</strong> Accepted papers will be presented as posters; selected papers may be invited for spotlight talks.</li>
+      </ul>
+      <button onclick="closeDialog('submissions')" class="mt-4 bg-slate-800 text-white px-3 py-1 rounded-lg">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function openDialog(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+    function closeDialog(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+  </script>
+
 </body>
 </html>
